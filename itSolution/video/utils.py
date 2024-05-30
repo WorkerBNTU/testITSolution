@@ -18,7 +18,7 @@ def create_video(message: str, media_root: str):
         title = message
     title = transliterate.slugify('ъ' + title)
 
-    video_path = os.path.join(media_root, f"videos\\{title}.mp4")
+    video_path = os.path.join(media_root, f"videos/{title}.mp4")
     out = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
     frame_clear = np.full((height, width, 3), (51, 102, 0), dtype=np.uint8)
 
